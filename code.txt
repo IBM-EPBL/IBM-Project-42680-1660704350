@@ -1,0 +1,33 @@
+float temp;
+void setup()
+{
+  pinMode(6,INPUT);
+  pinMode(12,OUTPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+if(digitalRead(6)==HIGH)
+  {
+    tone(12,523,1000);
+    Serial.println("unknown detected");
+}
+  else{
+    noTone(14);
+  }
+  temp=analogRead(A1); 
+  temp=temp*0.488268123;
+  if(temp=110.89)
+  {
+    tone(12,100,2000);
+    Serial.println("Above 60c temperature");
+  }
+  else
+  {
+    noTone(12);
+  }
+}
+
+  
+  
+  
